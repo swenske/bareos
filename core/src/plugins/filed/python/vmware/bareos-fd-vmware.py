@@ -3124,7 +3124,7 @@ class BareosVADPWrapper(object):
         vm_view.Destroy()
 
         for vm in all_vms:
-            if isinstance(vm.config, type(None)):
+            if vm.config is None:
                 bareosfd.DebugMessage(
                     100, "cannot read vm.config from VM %s\n" % (vm.name)
                 )
